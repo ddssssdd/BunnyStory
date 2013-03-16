@@ -11,7 +11,7 @@
 #import "PageBase.h"
 #import "MoveSprite.h"
 #import "MusicManager.h"
-#import "Page0.h"
+#import "PageStart.h"
 #import "PageSettings.h"
 
 #define AutoPagingAfterSeconds 25
@@ -26,6 +26,7 @@
         [[MusicManager sharedManager] stopEffects];
         _pageNo=0;
         _story_index = -1;
+        _hasBackHomeButton = NO;
         _isAutoPaging =[[MusicManager sharedManager] isAutoPaging];
         textPoint=CGPointMake(512, 80);
         [self initScreen];
@@ -54,7 +55,22 @@
         gestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self  action:@selector(handleSwipe:)];
         [gestureRecognizer setDirection:UISwipeGestureRecognizerDirectionDown];
         [[[CCDirector sharedDirector] view] addGestureRecognizer:gestureRecognizer];
+        
+        UITapGestureRecognizer *tap =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+        tap.numberOfTapsRequired = 2;
+        [[[CCDirector sharedDirector] view] addGestureRecognizer:tap];
+        
         [gestureRecognizer release];
+        if (_hasBackHomeButton){
+            CCMenuItemImage *itemStart = [CCMenuItemImage itemWithNormalImage:@"backbutton-1.png" selectedImage:@"backbutton-2.png" target:self selector:@selector(goHomePage)];
+            CCMenu *mainMenu =[CCMenu menuWithItems:itemStart, nil];
+            mainMenu.position =CGPointZero;
+            [self addChild:mainMenu z:999];
+            CGFloat h =[[CCDirector sharedDirector] winSize].height;
+            itemStart.position=ccp(62 ,h-72);
+        }
+        
+        
     }
     return self;
 }
@@ -66,14 +82,17 @@
      
     //[_timer invalidate];
 }
+-(void)handleTap:(UITapGestureRecognizer *)tap{
+    NSLog(@"%@",tap);
+}
 -(void)handleSwipe:(UISwipeGestureRecognizer*)recognizer
 {
     if (recognizer.direction==UISwipeGestureRecognizerDirectionLeft){
-        NSLog(@"direct left happened!");
-         [self nextPage];
+        [self goLeft];
+        [self nextPage];
     }
     if (recognizer.direction==UISwipeGestureRecognizerDirectionRight){
-        NSLog(@"direct right happened!");
+        [self goRight];
         [self priorPage];
     }    
     if (recognizer.direction==UISwipeGestureRecognizerDirectionUp){
@@ -133,6 +152,8 @@
         [self removeChildByTag:SETTINGS_TAG cleanup:YES];
     }
      */
+    
+    /*
     NSSet *allTouches = [event allTouches];
     if ([allTouches count]==1){
         UITouch *touch =[[allTouches allObjects]objectAtIndex:0];
@@ -143,6 +164,7 @@
         }
                   
     }
+     */
 }
 -(void)initScreen
 {
@@ -171,7 +193,7 @@
 }
 -(void)goHomePage
 {
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:1 scene:[Page0 scene] backwards:YES]];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:1 scene:[PageStart scene] backwards:YES]];
 }
 -(void)addAnimation:(NSString *)name count:(int)count x:(CGFloat)x y:(CGFloat)y{
     [self addAnimation:name count:count x:x y:y animationTime:1.0];
@@ -185,9 +207,12 @@
         //[animation addFrameWithFilename:[NSString stringWithFormat:name,i]];
     }
     //CCAnimate *animate=[CCAnimate actionWithDuration:animationTime animation:animation restoreOriginalFrame:YES];
+    animation.delayPerUnit= animationTime;
+    animation.restoreOriginalFrame = YES;
     CCAnimate *animate = [CCAnimate actionWithAnimation:animation];
     
-    MoveSprite *sprite=[MoveSprite spriteWithFile:[NSString stringWithFormat:name,1]];
+    //MoveSprite *sprite=[MoveSprite spriteWithFile:[NSString stringWithFormat:name,1]];
+    CCSprite *sprite =[CCSprite spriteWithFile:[NSString stringWithFormat:name,1]];
     [self addChild:sprite z:0];
     sprite.position=ccp(x,y);
     [sprite runAction:[CCRepeatForever actionWithAction:animate]];
@@ -247,5 +272,12 @@
     if ([[MusicManager sharedManager] isEffects])
         [[MusicManager sharedManager] stopEffects];
         [self playSound];
+}
+-(void)goLeft
+{
+    
+}
+-(void)goRight{
+    
 }
 @end

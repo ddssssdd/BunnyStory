@@ -9,5 +9,6 @@
 #import "PageBase.h"
 
 @interface PageHelp : PageBase
+
 +(CCScene *)scene;
 @end

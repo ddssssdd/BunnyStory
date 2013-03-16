@@ -11,6 +11,7 @@
 @interface PageEnd : PageBase{
     BOOL isInMore;
 }
-+(CCScene *)scene;
+@property (nonatomic) int index;
++(CCScene *)scene:(int)index;
 
 @end

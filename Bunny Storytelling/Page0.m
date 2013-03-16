@@ -25,6 +25,7 @@
 
 -(void)initScreen
 {
+    _hasBackHomeButton = YES;
     _isAutoPaging =NO;
     if ([self getChildByTag:BACKGROUND_TAG])
         [self removeChildByTag:BACKGROUND_TAG cleanup:YES];
@@ -46,10 +47,7 @@
 -(void)priorPage{
     
 }
--(void)goHomePage
-{
 
-}
 -(void)setEnglish:(id)sender
 {
     [[MusicManager sharedManager] setLanguage:@"En"];

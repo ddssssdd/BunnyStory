@@ -25,12 +25,13 @@
 
 -(void)initScreen
 {
+    _hasBackHomeButton = YES;
     _isAutoPaging =NO;
     if ([self getChildByTag:BACKGROUND_TAG])
         [self removeChildByTag:BACKGROUND_TAG cleanup:YES];
     if ([self getChildByTag:MAINMENU_TAG])
         [self removeChildByTag:MAINMENU_TAG cleanup:YES];
-    CCSprite *bg =[CCSprite spriteWithFile:[self getFileName:@"page0/homepage"]];
+    CCSprite *bg =[CCSprite spriteWithFile:[self getFileName:@"pageHelp/homepage"]];
     [self addChild:bg z:0 tag:BACKGROUND_TAG];
     bg.anchorPoint=CGPointZero; 
     [self initMenu];
@@ -43,10 +44,7 @@
 -(void)priorPage{
     
 }
--(void)goHomePage
-{
 
-}
 -(void)setEnglish:(id)sender
 {
     [[MusicManager sharedManager] setLanguage:@"En"];

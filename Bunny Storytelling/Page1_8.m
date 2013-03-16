@@ -39,7 +39,7 @@
 }
 -(void)nextPage
 {
-     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:1 scene:[PageEnd scene] backwards:NO]];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:1 scene:[PageEnd scene:1] backwards:NO]];
 }
 
 -(void)priorPage{

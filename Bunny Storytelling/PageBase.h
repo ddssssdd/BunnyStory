@@ -14,6 +14,7 @@
     int _pageNo;
     int _story_index;
     BOOL _isAutoPaging;
+    BOOL _hasBackHomeButton;
     NSTimer* _timer;
     //NSTimer* _pageTimer;
     CGPoint textPoint;
@@ -35,4 +36,9 @@
 -(void)addText;
 -(void)update;
 -(void)pauseReading;
+
+-(void)goLeft;
+-(void)goRight;
+
+-(void)handleTap:(UITapGestureRecognizer *)tap;
 @end

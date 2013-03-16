@@ -11,6 +11,8 @@
 #import "IntroLayer.h"
 #import "Page0.h"
 #import "Page1_0.h"
+#import "PageStart.h"
+#import "MusicManager.h"
 
 #pragma mark - IntroLayer
 
@@ -44,7 +46,7 @@
 	CCSprite *background;
 	
 	if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ) {
-		background = [CCSprite spriteWithFile:@"Default.png"];
+		background = [CCSprite spriteWithFile:@"ipad.png"];
 		background.rotation = 90;
 	} else {
 		background = [CCSprite spriteWithFile:@"Default-Landscape~ipad.png"];
@@ -56,10 +58,11 @@
 	
 	// In one second transition to the new scene
 	[self scheduleOnce:@selector(makeTransition:) delay:1];
+    [[MusicManager sharedManager] playBackground];
 }
 
 -(void) makeTransition:(ccTime)dt
 {
-	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[Page0 scene] withColor:ccWHITE]];
+	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[PageStart scene] withColor:ccWHITE]];
 }
 @end

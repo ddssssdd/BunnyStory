@@ -106,7 +106,7 @@ static MusicManager *instance=nil;
     
     SimpleAudioEngine *engine=[SimpleAudioEngine sharedEngine] ;
     //[engine playBackgroundMusic:@"rabbitbgm.caf" loop:YES];
-    [engine playBackgroundMusic:@"Kuqi.mp3" loop:YES];
+    [engine playBackgroundMusic:@"title.mp3" loop:YES];
 
 }
 -(void)Play1{
