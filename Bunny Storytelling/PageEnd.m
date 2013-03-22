@@ -68,7 +68,7 @@
     if (self.index==1){
         [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:1 scene:[Page1_0 scene] backwards:YES]];
     }else{
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:1 scene:[Page1 scene] backwards:YES]];
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:1 scene:[Page0 scene] backwards:YES]];
     }
 
 }
@@ -80,7 +80,7 @@
     [self addChild:bgMore z:11 tag:BG_TAG];
     bgMore.position=ccp(512,388);
     CCMenuItemImage *menuGoHome2=[CCMenuItemImage itemWithNormalImage:[self getFileName:@"pageEnd/backbtn_out"] selectedImage:[self getFileName:@"pageEnd/backbtn_over"]  block:^(id sender){
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:1 scene:[Page0 scene] backwards:YES]];
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:1 scene:[PageStart scene] backwards:YES]];
     }];
     CCMenu* menu2 =[CCMenu menuWithItems:menuGoHome2, nil];
     [self addChild:menu2 z:11 tag:MENU_TAG];
@@ -122,7 +122,7 @@
 }
 
 -(void)priorPage{
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:1 scene:[Page8 scene] backwards:YES]];
+    //[[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:1 scene:[Page8 scene] backwards:YES]];
 }
 -(void)playSound
 {

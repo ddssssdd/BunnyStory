@@ -37,6 +37,8 @@
 
 -(void)stopEffects;
 -(void)playBackground;
+-(void)playBackground_1;
+-(void)playBackground_2;
 -(void)Play1;
 -(void)Play2;
 -(void)Play3;

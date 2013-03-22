@@ -7,8 +7,8 @@
 //
 
 #import "MoveSprite.h"
-#define MOVEDISTANCE 2
-#define ARROWDISTANCE 50
+#define MOVEDISTANCE 10
+#define ARROWDISTANCE 100
 @implementation MoveSprite
 -(id)init{
     if ((self=[super init])){

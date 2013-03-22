@@ -29,6 +29,9 @@
         _hasBackHomeButton = NO;
         _isAutoPaging =[[MusicManager sharedManager] isAutoPaging];
         textPoint=CGPointMake(512, 80);
+        
+        backbuttonName1 = @"backbutton-1.png";
+        backbuttonName2 = @"backbutton-2.png";
         [self initScreen];
         
         self.isTouchEnabled=YES;
@@ -62,12 +65,12 @@
         
         [gestureRecognizer release];
         if (_hasBackHomeButton){
-            CCMenuItemImage *itemStart = [CCMenuItemImage itemWithNormalImage:@"backbutton-1.png" selectedImage:@"backbutton-2.png" target:self selector:@selector(goHomePage)];
+            CCMenuItemImage *itemStart = [CCMenuItemImage itemWithNormalImage:backbuttonName1 selectedImage:backbuttonName2 target:self selector:@selector(goHomePage)];
             CCMenu *mainMenu =[CCMenu menuWithItems:itemStart, nil];
             mainMenu.position =CGPointZero;
-            [self addChild:mainMenu z:999];
+            [self addChild:mainMenu z:999 tag:9999];
             CGFloat h =[[CCDirector sharedDirector] winSize].height;
-            itemStart.position=ccp(62 ,h-72);
+            itemStart.position=ccp(67 ,h-72);
         }
         
         
@@ -120,6 +123,7 @@
 }
 -(void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    
     CGSize winSize =[[CCDirector sharedDirector] winSize];
     UITouch *touch=[touches anyObject];
     CGPoint location =[touch locationInView:[touch view]];
@@ -193,13 +197,17 @@
 }
 -(void)goHomePage
 {
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:1 scene:[PageStart scene] backwards:YES]];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionMoveInL transitionWithDuration:1 scene:[PageStart scene]]];
 }
 -(void)addAnimation:(NSString *)name count:(int)count x:(CGFloat)x y:(CGFloat)y{
     [self addAnimation:name count:count x:x y:y animationTime:1.0];
 }
-
--(void)addAnimation:(NSString *)name count:(int)count x:(CGFloat)x y:(CGFloat)y  animationTime:(CGFloat)animationTime
+-(void)addAnimation:(NSString *)name count:(int)count x:(CGFloat)x y:(CGFloat)y animationTime:(CGFloat)animationTime{
+    
+    [self addAnimation:name count:count x:x y:y animationTime:animationTime randomStop:NO];
+    
+}
+-(void)addAnimation:(NSString *)name count:(int)count x:(CGFloat)x y:(CGFloat)y  animationTime:(CGFloat)animationTime  randomStop:(BOOL)randomStop
 {
     CCAnimation *animation=[CCAnimation animation];
     for (int i=1; i<=count; i++) {
@@ -212,10 +220,15 @@
     CCAnimate *animate = [CCAnimate actionWithAnimation:animation];
     
     //MoveSprite *sprite=[MoveSprite spriteWithFile:[NSString stringWithFormat:name,1]];
-    CCSprite *sprite =[CCSprite spriteWithFile:[NSString stringWithFormat:name,1]];
+    CCSprite *sprite =[CCSprite spriteWithFile:[NSString stringWithFormat:name,count]];
     [self addChild:sprite z:0];
     sprite.position=ccp(x,y);
-    [sprite runAction:[CCRepeatForever actionWithAction:animate]];
+    float randomDelay = 1.0;
+    if (randomStop){
+        randomDelay = CCRANDOM_0_1()*7;
+    }
+    CCSequence *sequ = [CCSequence actions:[CCDelayTime actionWithDuration:randomDelay],animate, nil];
+    [sprite runAction:[CCRepeatForever actionWithAction:sequ]];
     //[sprite initDebugMenu];
   
 }

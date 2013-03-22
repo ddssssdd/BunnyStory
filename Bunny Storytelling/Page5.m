@@ -11,6 +11,7 @@
 #import "Page6.h"
 #import "MusicManager.h"
 
+
 @implementation Page5
 +(CCScene *)scene
 {
@@ -27,6 +28,11 @@
     [self addAnimation:@"scene-5/5-fish-0%d.png" count:3 x:156 y:100 animationTime:2];    
     [self addAnimation:@"scene-5/5-tiger-0%d.png" count:2 x:587 y:253 animationTime:1];
     [self addAnimation:@"scene-5/5-rabbit-0%d.png" count:2 x:361 y:551 animationTime:1];
+    CCSprite *s1 =[CCSprite spriteWithFile:@"scene-5/5-bg_00.png"];
+    [self addChild:s1];
+    s1.position=ccp(880,116);
+    
+    
     _pageNo=5;
     textPoint = CGPointMake(802, 639);
     

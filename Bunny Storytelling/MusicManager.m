@@ -109,10 +109,26 @@ static MusicManager *instance=nil;
     [engine playBackgroundMusic:@"title.mp3" loop:YES];
 
 }
+-(void)playBackground_1;
+{
+    
+    SimpleAudioEngine *engine=[SimpleAudioEngine sharedEngine] ;
+    //[engine playBackgroundMusic:@"rabbitbgm.caf" loop:YES];
+    [engine playBackgroundMusic:@"xiaoniao.mp3" loop:YES];
+    
+}
+-(void)playBackground_2;
+{
+    
+    SimpleAudioEngine *engine=[SimpleAudioEngine sharedEngine] ;
+    //[engine playBackgroundMusic:@"rabbitbgm.caf" loop:YES];
+    [engine playBackgroundMusic:@"laohu.mp3" loop:YES];
+    
+}
 -(void)Play1{
     if (!_isEffects)
         return;
-    
+    [self stopEffects];
     SimpleAudioEngine *engine=[SimpleAudioEngine sharedEngine] ;
     //[engine stopBackgroundMusic];
     _currentEffects =[engine playEffect:[NSString stringWithFormat:@"Page 1-%@.mp3",_language] ];
@@ -121,7 +137,7 @@ static MusicManager *instance=nil;
 -(void)Play2{
     if (!_isEffects)
         return;
-    
+    [self stopEffects];
     SimpleAudioEngine *engine=[SimpleAudioEngine sharedEngine] ;
     _currentEffects = [engine playEffect:[NSString stringWithFormat:@"Page 2-%@.mp3",_language] ];
     
@@ -130,6 +146,7 @@ static MusicManager *instance=nil;
 {
     if (!_isEffects)
         return;
+    [self stopEffects];
     SimpleAudioEngine *engine=[SimpleAudioEngine sharedEngine] ;
     _currentEffects = [engine playEffect:[NSString stringWithFormat:@"Page 3-%@.mp3",_language] ];
 }
@@ -137,6 +154,7 @@ static MusicManager *instance=nil;
 {
     if (!_isEffects)
         return;
+    [self stopEffects];
     SimpleAudioEngine *engine=[SimpleAudioEngine sharedEngine] ;
     _currentEffects = [engine playEffect:[NSString stringWithFormat:@"Page 4-%@.mp3",_language] ];
 }
@@ -144,6 +162,7 @@ static MusicManager *instance=nil;
 {
     if (!_isEffects)
         return;
+    [self stopEffects];
     SimpleAudioEngine *engine=[SimpleAudioEngine sharedEngine] ;
     _currentEffects = [engine playEffect:[NSString stringWithFormat:@"Page 5-%@.mp3",_language] ];
 }
@@ -151,6 +170,7 @@ static MusicManager *instance=nil;
 {
     if (!_isEffects)
         return;
+    [self stopEffects];
     SimpleAudioEngine *engine=[SimpleAudioEngine sharedEngine] ;
     _currentEffects = [engine playEffect:[NSString stringWithFormat:@"Page 6-%@.mp3",_language] ];
 }
@@ -158,6 +178,7 @@ static MusicManager *instance=nil;
 {
     if (!_isEffects)
         return;
+    [self stopEffects];
     SimpleAudioEngine *engine=[SimpleAudioEngine sharedEngine] ;
     _currentEffects = [engine playEffect:[NSString stringWithFormat:@"Page 7-%@.mp3",_language] ];
 }
@@ -165,6 +186,7 @@ static MusicManager *instance=nil;
 {
     if (!_isEffects)
         return;
+    [self stopEffects];
     SimpleAudioEngine *engine=[SimpleAudioEngine sharedEngine] ;
     _currentEffects = [engine playEffect:[NSString stringWithFormat:@"Page 8-%@.mp3",_language] ];
 }
@@ -174,7 +196,7 @@ static MusicManager *instance=nil;
 -(void)Play1_1{
     if (!_isEffects)
         return;
-    
+    [self stopEffects];
     SimpleAudioEngine *engine=[SimpleAudioEngine sharedEngine] ;
     //[engine stopBackgroundMusic];
     _currentEffects =[engine playEffect:[NSString stringWithFormat:@"Page 1_%@.caf",_language] ];
@@ -183,7 +205,7 @@ static MusicManager *instance=nil;
 -(void)Play1_2{
     if (!_isEffects)
         return;
-    
+    [self stopEffects];
     SimpleAudioEngine *engine=[SimpleAudioEngine sharedEngine] ;
     _currentEffects = [engine playEffect:[NSString stringWithFormat:@"Page 2_%@.caf",_language] ];
     
@@ -192,6 +214,7 @@ static MusicManager *instance=nil;
 {
     if (!_isEffects)
         return;
+    [self stopEffects];
     SimpleAudioEngine *engine=[SimpleAudioEngine sharedEngine] ;
     _currentEffects = [engine playEffect:[NSString stringWithFormat:@"Page 3_%@.caf",_language] ];
 }
@@ -199,6 +222,7 @@ static MusicManager *instance=nil;
 {
     if (!_isEffects)
         return;
+    [self stopEffects];
     SimpleAudioEngine *engine=[SimpleAudioEngine sharedEngine] ;
     _currentEffects = [engine playEffect:[NSString stringWithFormat:@"Page 4_%@.caf",_language] ];
 }
@@ -206,6 +230,7 @@ static MusicManager *instance=nil;
 {
     if (!_isEffects)
         return;
+    [self stopEffects];
     SimpleAudioEngine *engine=[SimpleAudioEngine sharedEngine] ;
     _currentEffects = [engine playEffect:@"page5.mp3"];
 }
@@ -213,6 +238,7 @@ static MusicManager *instance=nil;
 {
     if (!_isEffects)
         return;
+    [self stopEffects];
     SimpleAudioEngine *engine=[SimpleAudioEngine sharedEngine] ;
     _currentEffects = [engine playEffect:[NSString stringWithFormat:@"Page 6_%@.caf",_language] ];
 }
@@ -220,6 +246,7 @@ static MusicManager *instance=nil;
 {
     if (!_isEffects)
         return;
+    [self stopEffects];
     SimpleAudioEngine *engine=[SimpleAudioEngine sharedEngine] ;
     _currentEffects = [engine playEffect:[NSString stringWithFormat:@"Page 7_%@.caf",_language] ];
 }
@@ -227,6 +254,7 @@ static MusicManager *instance=nil;
 {
     if (!_isEffects)
         return;
+    [self stopEffects];
     SimpleAudioEngine *engine=[SimpleAudioEngine sharedEngine] ;
     _currentEffects = [engine playEffect:[NSString stringWithFormat:@"Page 8_%@.caf",_language] ];
 }

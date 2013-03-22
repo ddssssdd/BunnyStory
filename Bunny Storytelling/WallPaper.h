@@ -8,6 +8,8 @@
 
 #import "PageBase.h"
 
-@interface WallPaper : PageBase
+@interface WallPaper : PageBase{
+    int dir;
+}
 +(CCScene *)scene;
 @end

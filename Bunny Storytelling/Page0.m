@@ -16,7 +16,7 @@
 @implementation Page0
 +(CCScene *)scene
 {
-    
+    [[MusicManager sharedManager] playBackground_2];
     CCScene *scene = [CCScene node];
     Page0 *page =[Page0 node];
     [scene addChild:page];
@@ -26,6 +26,8 @@
 -(void)initScreen
 {
     _hasBackHomeButton = YES;
+    backbuttonName1 = @"back00.png";
+    backbuttonName2 = @"back01.png";
     _isAutoPaging =NO;
     if ([self getChildByTag:BACKGROUND_TAG])
         [self removeChildByTag:BACKGROUND_TAG cleanup:YES];
@@ -36,12 +38,12 @@
     bg.anchorPoint=CGPointZero; 
     
     [self addAnimation:@"page0/index_chong%d.png" count:7 x:110 y:188 animationTime:3];
-    [self addAnimation:@"page0/index_close%d.png" count:2 x:487 y:461 animationTime:1];
+    [self addAnimation:@"page0/index_close%d.png" count:2 x:487 y:461 animationTime:0.1  randomStop:YES];
     [self initMenu];
 }
 -(void)nextPage
 {
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:1 scene:[PageHelp scene] backwards:NO]];
+    //[[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:1 scene:[PageHelp scene] backwards:NO]];
 }
 
 -(void)priorPage{

@@ -18,6 +18,8 @@
     NSTimer* _timer;
     //NSTimer* _pageTimer;
     CGPoint textPoint;
+    NSString *backbuttonName1;
+    NSString *backbuttonName2;
 }
 -(void)initScreen;
 
@@ -28,6 +30,7 @@
 -(void)popupSettings;
 
 -(void)goHomePage;
+-(void)addAnimation:(NSString *)name count:(int)count x:(CGFloat)x y:(CGFloat)y animationTime:(CGFloat)animationTime randomStop:(BOOL)randomStop;
 
 -(void)addAnimation:(NSString *)name count:(int)count x:(CGFloat)x y:(CGFloat)y animationTime:(CGFloat)animationTime;
 -(void)addAnimation:(NSString *)name count:(int)count x:(CGFloat)x y:(CGFloat)y;

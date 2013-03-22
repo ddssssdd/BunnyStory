@@ -11,11 +11,13 @@
 #import "Page1_0.h"
 #import "Design1.h"
 #import "WallPaper.h"
+#import "MusicManager.h"
 
 #define MAINMENU_TAG 1
 @implementation PageStart
 
 +(CCScene *)scene{
+    [[MusicManager sharedManager] playBackground];
     CCScene *scene = [CCScene node];
     PageStart *page =[PageStart node];
     [scene addChild:page];
@@ -27,12 +29,13 @@
     CCSprite *bg =[CCSprite spriteWithFile:@"title/bj01.png"];
     [self addChild:bg];
     bg.anchorPoint=CGPointZero;
-//    [self addAnimation:@"001/bird%d.png" count:2 x:185 y:560];
-//    [self addAnimation:@"001/bird%d.png" count:2 x:185 y:560];
-    [self addAnimation:@"title-ani/1-insect-%02d.png" count:11 x:900 y:120 animationTime:1];
-    [self addAnimation:@"title-ani/qingting%d.png" count:4 x:150 y:150 animationTime:0.5];
+    
     [self initMenu];
     _hasBackHomeButton = NO;
+    [self addAnimation:@"title-ani/book1_%d.png" count:3 x:315 y:385 animationTime:0.1 randomStop:YES];
+    [self addAnimation:@"title-ani/book2_%d.png" count:3 x:705 y:385 animationTime:0.1 randomStop:YES];
+    [self addAnimation:@"title-ani/1-insect-%02d.png" count:11 x:900 y:120 animationTime:1];
+    [self addAnimation:@"title-ani/qingting%d.png" count:4 x:150 y:150 animationTime:0.5];
    
    
 }

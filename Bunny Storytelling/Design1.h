@@ -8,7 +8,10 @@
 
 #import "PageBase.h"
 
-@interface Design1 : PageBase
+@interface Design1 : PageBase{
+    int _index;
+    BOOL _inMoving;
+}
 +(CCScene *)scene;
 
 @end

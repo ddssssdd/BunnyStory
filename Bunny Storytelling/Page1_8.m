@@ -23,7 +23,7 @@
     CCSprite *bg =[CCSprite spriteWithFile:@"008/bg.png"];
     [self addChild:bg];
     bg.anchorPoint=CGPointZero; 
-    [self addAnimation:@"008/sun4.png" count:1 x:500 y:525];
+    [self addAnimation:@"008/sun4.png" count:1 x:512 y:375];
 
     CCSprite *land =[CCSprite spriteWithFile:@"008/land.png"];
     [self addChild:land];
@@ -32,7 +32,7 @@
     [self addAnimation:@"008/flower%d.png" count:4 x:160 y:130];
     [self addAnimation:@"008/flowersmall%d.png" count:4 x:140 y:65];
     [self addAnimation:@"008/qingting%d.png" count:3 x:205 y:665];
-    [self addAnimation:@"008/zoom%d.png" count:2 x:850 y:280];
+    [self addAnimation:@"008/zoom%d.png" count:2 x:874 y:280];
     _pageNo=8;
     _story_index =1;
     

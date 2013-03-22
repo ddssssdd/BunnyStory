@@ -12,7 +12,8 @@
 #import "Page0.h"
 #import "Page1_0.h"
 #import "PageStart.h"
-#import "MusicManager.h"
+
+
 
 #pragma mark - IntroLayer
 
@@ -58,7 +59,7 @@
 	
 	// In one second transition to the new scene
 	[self scheduleOnce:@selector(makeTransition:) delay:1];
-    [[MusicManager sharedManager] playBackground];
+    
 }
 
 -(void) makeTransition:(ccTime)dt
