@@ -165,7 +165,7 @@
 }
 -(void)start:(id)sender
 {
-    [self nextPage];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:1 scene:[PageHelp scene] backwards:NO]];
 }
 -(void)popupSettings
 {}
