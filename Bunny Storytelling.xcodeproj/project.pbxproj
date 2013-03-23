@@ -1691,8 +1691,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer: sald wu (4G72AMYC65)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: sald wu (4G72AMYC65)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: WU MIN";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WU MIN";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1707,8 +1707,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "B58ABB21-491C-4134-9786-4F20EF5A2F86";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B58ABB21-491C-4134-9786-4F20EF5A2F86";
+				PROVISIONING_PROFILE = "3CDD03D3-C678-4819-85A7-BB3ECE039736";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3CDD03D3-C678-4819-85A7-BB3ECE039736";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1717,8 +1717,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer: sald wu (4G72AMYC65)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: sald wu (4G72AMYC65)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: WU MIN";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WU MIN";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bunny Storytelling/Prefix.pch";
@@ -1732,8 +1732,8 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "B58ABB21-491C-4134-9786-4F20EF5A2F86";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B58ABB21-491C-4134-9786-4F20EF5A2F86";
+				PROVISIONING_PROFILE = "3CDD03D3-C678-4819-85A7-BB3ECE039736";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3CDD03D3-C678-4819-85A7-BB3ECE039736";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
