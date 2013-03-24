@@ -21,7 +21,7 @@
 }
 -(void)initScreen
 {
-    CCSprite *bg =[CCSprite spriteWithFile:@"scene-4/4-bg.png"];
+    CCSprite *bg =[CCSprite spriteWithFile:@"scene-4/4-bg.jpg"];
     [self addChild:bg];
     bg.anchorPoint=CGPointZero;    
     [self addAnimation:@"scene-4/4-rabbit-0%d.png" count:2 x:440 y:416 animationTime:1];    

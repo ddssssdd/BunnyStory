@@ -22,7 +22,7 @@
 }
 -(void)initScreen
 {
-    CCSprite *bg =[CCSprite spriteWithFile:@"scene-5/5-bg.png"];
+    CCSprite *bg =[CCSprite spriteWithFile:@"scene-5/5-bg.jpg"];
     [self addChild:bg];
     bg.anchorPoint=CGPointZero;    
     [self addAnimation:@"scene-5/5-fish-0%d.png" count:3 x:156 y:100 animationTime:2];    

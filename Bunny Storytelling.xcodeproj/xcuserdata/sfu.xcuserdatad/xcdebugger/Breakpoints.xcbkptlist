@@ -21,12 +21,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Bunny Storytelling/PageBase.m"
-         timestampString = "385391912.605215"
+         timestampString = "385826248.188128"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "257"
-         endingLineNumber = "257"
-         landmarkName = "-update"
+         startingLineNumber = "264"
+         endingLineNumber = "264"
+         landmarkName = "-addText"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -34,25 +34,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Bunny Storytelling/PageBase.m"
-         timestampString = "385391912.605215"
+         timestampString = "385826248.188128"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "261"
-         endingLineNumber = "261"
+         startingLineNumber = "268"
+         endingLineNumber = "268"
+         landmarkName = "-addText"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Bunny Storytelling/PageBase.m"
+         timestampString = "385826248.188128"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "277"
+         endingLineNumber = "277"
          landmarkName = "-pauseReading"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Bunny Storytelling/PageBase.m"
-         timestampString = "385391912.605215"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "270"
-         endingLineNumber = "270"
-         landmarkName = "-resumeReading"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -156,7 +156,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "208"
          endingLineNumber = "208"
-         landmarkName = "-addAnimation:count:x:y:animationTime:randomStop:"
+         landmarkName = "-addAnimation:count:x:y:animationTime:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint

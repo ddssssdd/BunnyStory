@@ -22,7 +22,7 @@
 -(void)initScreen
 {
     
-    CCSprite *bg =[CCSprite spriteWithFile:@"scene-6/6-bg.png"];
+    CCSprite *bg =[CCSprite spriteWithFile:@"scene-6/6-bg.jpg"];
     [self addChild:bg];
     bg.anchorPoint=CGPointZero;    
     [self addAnimation:@"scene-6/6-dragonfly-%02d.png" count:11 x:512 y:550 animationTime:6];

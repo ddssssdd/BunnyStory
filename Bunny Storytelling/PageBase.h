@@ -36,6 +36,7 @@
 -(void)addAnimation:(NSString *)name count:(int)count x:(CGFloat)x y:(CGFloat)y;
 -(void)playSound;
 -(NSString *)getFileName:(NSString *)filename;
+-(NSString *)getFileName:(NSString *)filename ext:(NSString *)ext;
 -(void)addText;
 -(void)update;
 -(void)pauseReading;

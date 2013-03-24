@@ -21,7 +21,7 @@
 
 -(void)initScreen
 {
-    CCSprite *bg =[CCSprite spriteWithFile:@"scene-1/1-bg.png"];
+    CCSprite *bg =[CCSprite spriteWithFile:@"scene-1/1-bg.jpg"];
     [self addChild:bg];
     bg.anchorPoint=CGPointZero;    
     [self addAnimation:@"scene-1/1-grass-0%d.png" count:3 x:984 y:204 animationTime:1.5];

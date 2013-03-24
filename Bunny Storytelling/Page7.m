@@ -21,7 +21,7 @@
 }
 -(void)initScreen
 {
-    CCSprite *bg =[CCSprite spriteWithFile:@"scene-7/7-bg.png"];
+    CCSprite *bg =[CCSprite spriteWithFile:@"scene-7/7-bg.jpg"];
     [self addChild:bg];
     bg.anchorPoint=CGPointZero;   
     [self addAnimation:@"scene-7/7-wolf-0%d.png" count:2 x:854 y:580 animationTime:3];

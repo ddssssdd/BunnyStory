@@ -241,6 +241,13 @@
     NSLog(@"%@",result);
     return result;
 }
+-(NSString *)getFileName:(NSString *)filename ext:(NSString *)ext
+{
+    
+    NSString *result=[NSString stringWithFormat:@"%@_%@.%@",filename,[[MusicManager sharedManager] language],ext];
+    NSLog(@"%@",result);
+    return result;
+}
 -(void)addText
 {
     if (_pageNo<1)

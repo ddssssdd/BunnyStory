@@ -20,7 +20,7 @@
 }
 -(void)initScreen
 {
-    CCSprite *bg =[CCSprite spriteWithFile:@"scene-3/3-bg.png"];
+    CCSprite *bg =[CCSprite spriteWithFile:@"scene-3/3-bg.jpg"];
     [self addChild:bg];
     bg.anchorPoint=CGPointZero;    
     [self addAnimation:@"scene-3/3-bird-0%d.png" count:2 x:484 y:522 animationTime:1];

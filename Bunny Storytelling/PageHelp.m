@@ -22,7 +22,7 @@
 
 -(void)initScreen
 {
-    CCSprite *bg0 =[CCSprite spriteWithFile:[self getFileName:@"page0/homepage"]];
+    CCSprite *bg0 =[CCSprite spriteWithFile:[self getFileName:@"page0/homepage" ext:@"jpg"]];
     [self addChild:bg0];
     bg0.anchorPoint=CGPointZero; 
     /*

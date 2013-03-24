@@ -33,7 +33,7 @@
         [self removeChildByTag:BACKGROUND_TAG cleanup:YES];
     if ([self getChildByTag:MAINMENU_TAG])
         [self removeChildByTag:MAINMENU_TAG cleanup:YES];
-    CCSprite *bg =[CCSprite spriteWithFile:[self getFileName:@"page0/homepage"]];
+    CCSprite *bg =[CCSprite spriteWithFile:[self getFileName:@"page0/homepage" ext:@"jpg"]];
     [self addChild:bg z:0 tag:BACKGROUND_TAG];
     bg.anchorPoint=CGPointZero; 
     

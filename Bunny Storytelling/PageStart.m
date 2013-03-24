@@ -26,7 +26,7 @@
 
 -(void)initScreen
 {
-    CCSprite *bg =[CCSprite spriteWithFile:@"title/bj01.png"];
+    CCSprite *bg =[CCSprite spriteWithFile:@"title/bj01.jpg"];
     [self addChild:bg];
     bg.anchorPoint=CGPointZero;
     
