@@ -76,22 +76,26 @@
     }
     [self initView];
 }
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
+    NSLog(@"%@",error);
+    if (!error){
+        CGSize s = [[CCDirector sharedDirector] winSize];
+        
+        CCLabelTTF* label = [CCLabelTTF labelWithString:@"Saved successfully." fontName:@"Arial" fontSize:32];
+        [self addChild: label z:1 tag:TAG_LABEL];
+        [label setPosition: ccp(s.width/2, s.height/2)];
+        CCJumpTo *jump = [CCJumpTo actionWithDuration:2 position:ccp(0,0) height:s.height/2 jumps:1];
+        CCCallBlock *callback = [CCCallBlock actionWithBlock:^{
+            [self removeChildByTag:TAG_LABEL cleanup:YES];
+        }];
+        [label runAction:[CCSequence actions:jump,callback, nil]];
+    }
+}
 -(void)save{
     NSLog(@"saving...");
     
     UIImage *image = [UIImage imageNamed:[self getbk]];
-    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
-    CGSize s = [[CCDirector sharedDirector] winSize];
-    
-    CCLabelTTF* label = [CCLabelTTF labelWithString:@"Saved successfully." fontName:@"Arial" fontSize:32];
-    [self addChild: label z:1 tag:TAG_LABEL];
-    [label setPosition: ccp(s.width/2, s.height/2)];
-    CCJumpTo *jump = [CCJumpTo actionWithDuration:2 position:ccp(0,0) height:s.height/2 jumps:1];
-    CCCallBlock *callback = [CCCallBlock actionWithBlock:^{
-        [self removeChildByTag:TAG_LABEL cleanup:YES];
-    }];
-    [label runAction:[CCSequence actions:jump,callback, nil]];
-    
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
     
 }
 -(void)changeBg{

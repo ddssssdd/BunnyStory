@@ -30,7 +30,7 @@
 
     isInMore =NO;
 
-    CCSprite *bg2 =[CCSprite spriteWithFile:[self getFileName:@"page0/homepage"]];
+    CCSprite *bg2 =[CCSprite spriteWithFile:[self getFileName:@"page0/homepage" ext:@"jpg"]];
     [self addChild:bg2];
     bg2.anchorPoint=CGPointZero; 
     

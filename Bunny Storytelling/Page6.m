@@ -25,7 +25,7 @@
     CCSprite *bg =[CCSprite spriteWithFile:@"scene-6/6-bg.jpg"];
     [self addChild:bg];
     bg.anchorPoint=CGPointZero;    
-    [self addAnimation:@"scene-6/6-dragonfly-%02d.png" count:11 x:512 y:550 animationTime:6];
+    [self addAnimation:@"scene-6/6-dragonfly-%02d.png" count:10 x:512 y:550 animationTime:6];
     [self addAnimation:@"scene-6/6-fish-0%d.png" count:2 x:140 y:120 animationTime:0.5];
     [self addAnimation:@"scene-6/6-water-0%d.png" count:4 x:512 y:200 animationTime:1];
     _pageNo=6;
